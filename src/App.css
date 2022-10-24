@@ -1,0 +1,22 @@
+.app_wrapper {
+  display: grid;
+  grid-template-areas:
+    "h h "
+    "n c";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 2fr 10fr;
+  grid-gap: 10px;
+  width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(203, 202, 202);
+}
+
+.wrapper_content {
+  grid-area: c;
+  background: url('https://s0.rbk.ru/v6_top_pics/resized/640xH/media/img/9/73/75 6182470538739.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+body{
+  color: #FFF;
+}

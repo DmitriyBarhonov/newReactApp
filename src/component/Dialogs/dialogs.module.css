@@ -1,0 +1,46 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    background: url('https://ichef.bbci.co.uk/news/624/amz/worldservice/live/assets/images/2015/04/23/150423155652_spaceformation.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+
+.dialogs_item {
+    background: url('https://stimul.online/upload/medialibrary/a18/a1826cd9d935c3a5a0367d28d2988038.png') center center no-repeat;
+    background-size: cover;
+}
+
+.item{
+    margin-bottom: 1rem;
+}
+
+.item_massage,
+.item {
+    color: rgb(235, 235, 235);
+    text-decoration: none;
+}
+
+.item_massage {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.active {
+    padding: .5rem;
+    text-decoration: none;
+    color: #fff;
+}
+.dialogI{
+    display: flex;
+    align-items: center;
+}
+
+.dialogI img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+textarea{
+    resize: none;
+}

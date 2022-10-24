@@ -1,0 +1,24 @@
+.header {
+    grid-area: h;
+    background: url('https://ichef.bbci.co.uk/news/624/amz/worldservice/live/assets/images/2015/04/23/150423154842_spacedust.jpg') center center no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+  }
+
+  .header img {
+    width: 50px;
+    height: auto;
+    padding: .1rem;
+  }
+
+  .login{
+    background: rgb(0, 0, 0);
+    padding: 3px 5px;
+    border-radius: 5px;
+  }
+
+  .link{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+  }

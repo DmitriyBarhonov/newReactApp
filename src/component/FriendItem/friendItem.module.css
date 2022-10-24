@@ -1,0 +1,10 @@
+.item{
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+}
+
+.item img {
+    width: 50px;
+    border-radius: 50%;
+}

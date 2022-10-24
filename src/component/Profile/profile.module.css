@@ -1,0 +1,16 @@
+
+  .content {
+    grid-area: c;
+    background: url('https://sites.google.com/site/prirodanasevseegooglgfgf/_/rsrc/1463456237313/home/priroda_gory_nebo_ozero_oblaka_81150_1920x1080.jpg');
+    background-size: cover;
+  }
+  
+
+  .photo img{
+    width: 250px;
+    height: 150px;
+    padding: 0 1rem;
+    border-radius: 50%;
+  }
+
+ 

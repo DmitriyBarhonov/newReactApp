@@ -1,0 +1,16 @@
+.item{
+    color: rgb(253, 255, 255);
+    font-size: 1.5rem;
+    
+}
+.post_item{
+    display: flex;
+    align-items: center;
+}
+.post_item img{
+    width: 90px;
+    border-radius: 50%;
+}
+span{
+    margin: 0 .3rem;
+}

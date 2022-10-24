@@ -1,0 +1,13 @@
+.photo{
+    display: inline-block;
+
+ }
+
+ .beach {
+    width: 70%;
+    padding: 0 1rem;
+  }
+
+  .main_photo{
+   width: 50%;
+  }

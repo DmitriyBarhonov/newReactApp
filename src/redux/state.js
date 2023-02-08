@@ -130,16 +130,16 @@
 
 // console.log( r )
 
-let ra = [10, 2, 12, 24, 51, 61]
+// let ra = [10, 2, 12, 24, 51, 61]
 
-const divisibleBy = (numbers, divisor) => {
-    for(let i = 0; i<numbers.length; i++){
-        if(numbers[i] % divisor === 0){
-            console.log(numbers[i])
-        }
-    }
-  }
+// const divisibleBy = (numbers, divisor) => {
+//     for(let i = 0; i<numbers.length; i++){
+//         if(numbers[i] % divisor === 0){
+//             console.log(numbers[i])
+//         }
+//     }
+//   }
 
-  divisibleBy(ra, 2)
+//   divisibleBy(ra, 2)
 
  

@@ -1,6 +1,6 @@
 import React from 'react';
 import clases from './myPosts.module.css';
-import { Post } from './Post/post';
+import { Post } from './Post/post.tsx';
 import { Formik, Form, Field, } from "formik";
 // import * as Yup from "yup";
 

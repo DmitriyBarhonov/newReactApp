@@ -2,10 +2,9 @@ import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {App} from './App';
 import {BrowserRouter} from "react-router-dom";
-import storeRedux from './redux/reduxStore'
-import store from './redux/state';
+import storeRedux from './redux/reduxStore.ts'
 import { Provider } from 'react-redux';
 
 

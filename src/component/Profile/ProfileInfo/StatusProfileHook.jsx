@@ -1,15 +1,21 @@
 // import profile from "./ProfileInfo.module.css"
 // import { Loader } from "../../common/preloader/loader";
 import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import {updateStatusThunkCreactor } from '../../../redux/profileReducer.ts'
 
 export const StatusProfileHook = (props) => {
+    const dispatch = useDispatch()
+    const statusStore = useSelector((state)=>state.postPage.status)
 
 let [editMode, setEditMode] = useState(false);
 let [status, setStatus] = useState(props.status)
 
 useEffect(()=>{
-    setStatus(props.status)
-},[props.status])
+    console.log(`params`)
+    setStatus(statusStore)
+},[])
+
 
 const activateEditMode = ()=>{
     setEditMode(true);
@@ -17,7 +23,7 @@ const activateEditMode = ()=>{
 
 const unActivateEditMode = ()=>{
     setEditMode(false);
-    props.updateStatusThunkCreactor(status);
+    dispatch(updateStatusThunkCreactor(status));
 }
 
 const onStatusChange = (e) =>{
@@ -28,10 +34,9 @@ const onStatusChange = (e) =>{
 
     return (
         <>
-
             {!editMode &&
                 <div>
-                <span  onClick={activateEditMode}>{props.status}</span>
+                <span  onClick={activateEditMode}>{statusStore}</span>
             </div>}
 
             {editMode &&

@@ -1,21 +1,30 @@
 import { Formik, Form, Field } from "formik";
 
-export const ProfileDataForm = () => {
+export const ProfileDataForm = (props) => {
+
+    let profile = props.profile
+
     return (
         <>
+
             <Formik initialValues={{
-                facebook: "",
-                website: "",
-                vk: "",
-                twitter: "",
-                instagram: "",
-                youtube: "",
-                github: "",
-                mainLink: "",
-                work: false
+                aboutMe: profile.aboutMe,
+                contacts:{
+                    facebook: profile.contacts.facebook,
+                    vk: profile.contacts.vk,
+                    twitter: profile.contacts.twitter,
+                    instagram: profile.contacts.instagram,
+                    website: profile.contacts.website,
+                    youtube: profile.contacts.youtube,
+                    github: profile.contacts.github,
+                    mainLink: profile.contacts.mainLink,
+                },
+                lookingForAJob: profile.lookingForAJob,
+                lookingForAJobDescription: profile.lookingForAJobDescription,
+                fullName: profile.fullName,
+
             }} onSubmit={(values) => {
-                let { facebook, website, vk, twitter, instagram,  youtube, github, mainLink, work,}  = values
-                console.log(facebook, website, vk, twitter, instagram,  youtube, github, mainLink, work,)
+                props.onSumbitInfoMethod(values)
             }}>
                 <Form>
                     <div>
@@ -25,44 +34,86 @@ export const ProfileDataForm = () => {
                         </div>
 
                         <div>
-                            <Field name="work" type="checkbox" />
+                            <Field name="lookingForAJob" type="checkbox" />
                             <label>Ищу работу</label>
                         </div>
 
                         <div>
-                            <Field name="facebook" type="text" placeholder='facebook' />
-                        </div>
-                        <div>
-                            <Field name="website" type="text" placeholder='website' />
+                            <Field name="lookingForAJobDescription" type="text" placeholder='lookingForAJobDescription' />
                         </div>
 
                         <div>
-                            <Field name="vk" type="text" placeholder='vk' />
+                            <Field name="fullName" type="text" placeholder='fullName' />
                         </div>
 
                         <div>
-                            <Field name="twitter" type="text" placeholder='twitter' />
-                        </div>
-
-                        <div>
-                            <Field name="instagram" type="text" placeholder='instagram' />
-                        </div>
-
-                        <div>
-                            <Field name="youtube" type="text" placeholder='youtube' />
-                        </div>
-
-                        <div>
-                            <Field name="github" type="text" placeholder='github' />
-                        </div>
-
-                        <div>
-                            <Field name="mainLink" type="text" placeholder='mainLink' />
+                            <Field name="aboutMe" type="text" placeholder='aboutMe' />
                         </div>
 
                     </div>
+
+
+                    <div>
+
+                        {/* <div >
+                            <button type="sumbit">Сохранить</button>
+                        </div>
+
+                        <div>
+                            <Field name="work" type="checkbox" />
+                            <label>Ищу работу</label>
+                        </div> */}
+
+                        <div>
+                            <Field name="contacts.facebook" type="text" placeholder='facebook' />
+                        </div>
+                        <div>
+                            <Field name="contacts.vk" type="text" placeholder='vk' />
+                        </div>
+
+                        <div>
+                            <Field name="contacts.twitter" type="text" placeholder='twitter' />
+                        </div>
+
+                        <div>
+                            <Field name="contacts.instagram" type="text" placeholder='instagram' />
+                        </div>
+
+                        <div>
+                            <Field name="contacts.website" type="text" placeholder='website' />
+                        </div>
+
+                        <div>
+                            <Field name="contacts.youtube" type="text" placeholder='youtube' />
+                        </div>
+
+                        <div>
+                            <Field name="contacts.github" type="text" placeholder='github' />
+                        </div>
+
+                        <div>
+                            <Field name="contacts.mainLink" type="text" placeholder='mainLink' />
+                        </div>
+
+                    </div>
+
                 </Form>
             </Formik>
+
+
+
+            {/* <div>
+                <Formik initialValues={{
+                    
+                }} onSubmit={(values) => {
+                    props.onSumbitInfoMethod(values)
+                }}>
+                    <Form>
+
+                    </Form>
+                </Formik>
+            </div> */}
+
         </>
     )
 }

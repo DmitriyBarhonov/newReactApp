@@ -1,38 +1,42 @@
-import {Routes, Route} from "react-router-dom";
-import { HeaderContainer } from './component/Header/headerContainer';
-import { Navbar } from './component/Navbar/navbar';
+// import  DialogsContainer  from './component/Dialogs/dialogsContainer';
 // import  ProfileContainer  from './component/Profile/profileContainer';
+import {Routes, Route} from "react-router-dom";
+import { Header } from './component/Header/header';
+import { Navbar } from './component/Navbar/navbar';
 import { News } from './component/News/news';
 import { Music } from './component/Music/music';
 import { Settings } from './component/Settings/settings';
-// import  DialogsContainer  from './component/Dialogs/dialogsContainer';
-import { UsersContainer } from './component/Users/usersContainer';
+import { UserPage } from './component/Users/usersContainer.tsx';
 import { LoginContainer } from './component/Login/lofin';
-import React, {Suspense, lazy} from "react";
-import { connect } from "react-redux/es/exports";
-import{initializeThunkCreator} from "./redux/appReducer"
+import React, {lazy, useEffect} from "react";
+import {useDispatch, useSelector } from "react-redux/es/exports";
+import{initializeThunkCreator} from "./redux/appReducer.ts"
 import './App.css';
 import { Loader } from "./component/common/preloader/loader";
 
+
 const DialogsContainer = lazy(() => import('./component/Dialogs/dialogsContainer'));
-const ProfileContainer = lazy(() => import('./component/Profile/profileContainer'));
+const ProfileContainer = lazy(() => import('./component/Profile/profileContainer.tsx'));
 
-export class App extends React.Component{
-  componentDidMount() {
-    this.props.initializeThunkCreator()
+
+
+export const App = ()=> {
+  const initialize = useSelector((state)=>state.app.initialized)
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    console.log(`хуй`)
+    dispatch(initializeThunkCreator())
+  },[])
+ 
+
+if(!initialize){
+  return <Loader/>
 }
-  render (){
-
-    if(!this.props.initialize){
-      return <Loader/>
-    }
-
-// console.log(this.props)
-
 
     return (
+      
         <div className='app_wrapper'>
-              <HeaderContainer />
+              <Header />
               <Navbar />
               <div className='wrapper_content'>
               <React.Suspense fallback={<Loader/>}>
@@ -43,7 +47,7 @@ export class App extends React.Component{
                     <Route path="/news/*" element={<News/>}/>
                     <Route path="/music/*" element={<Music/>}/>
                     <Route path="/settings/*" element={<Settings/>}/>
-                    <Route path="/users/*" element={<UsersContainer />}/>
+                    <Route path="/users/*" element={<UserPage />}/>
                     <Route path="/login/*" element={<LoginContainer/>}/>
                 </Routes>
                 </React.Suspense>
@@ -52,10 +56,10 @@ export class App extends React.Component{
       )
 
   }
-}
 
-const mapStateToProps = (state)=>({
-  initialize: state.app.initialized
-})
 
-export default connect(mapStateToProps, {initializeThunkCreator})(App)
+// const mapStateToProps = (state)=>({
+//   initialize: state.app.initialized
+// })
+
+// export default connect(mapStateToProps, {initializeThunkCreator})(App)

@@ -1,13 +1,20 @@
-import { AuthUserDataThunkCreator } from "./authReducer";
+import { types } from "@babel/core";
+// @ts-ignore
+import { AuthUserDataThunkCreator } from "./authReducer.ts";
 const SET_INITIALIZED = 'SET_INITIALIZED';
 
-let initialState = {
+export type initialStateType ={
+    initialized: boolean
+}
+
+
+let initialState: initialStateType = {
   initialized: false
 }
 
 
 
-const appReducer = (state = initialState, action) => {
+const appReducer = (state = initialState, action:any):initialStateType => {
 
     switch (action.type) {
 
@@ -23,13 +30,17 @@ const appReducer = (state = initialState, action) => {
 
 }
 
-export const setInitializedAuthUserData = () => ({
+type setInitializedType ={
+    type: typeof SET_INITIALIZED,
+}
+
+export const setInitializedAuthUserData = ():setInitializedType => ({
     type: SET_INITIALIZED,
 })
 
 
 export const initializeThunkCreator = () => {
-    return (dispatch) => {
+    return (dispatch:any) => {
       let  promise = dispatch(AuthUserDataThunkCreator())
         promise.then(()=>{
             dispatch(setInitializedAuthUserData())

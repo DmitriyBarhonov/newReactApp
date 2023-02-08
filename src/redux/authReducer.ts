@@ -1,37 +1,49 @@
-import {
-    usersAPI,
-    AuthAPI
-} from "../api/api"
+ 
+// @ts-ignore
+import { usersAPI, AuthAPI, ResultCodeEnum } from "../api/api.ts"
 const SET_USER_DATA = 'SET_USER_DATA';
 
 
 let initialState = {
-    id: null,
-    login: null,
-    email: null,
+    id: null as number | null,
+    login: null as string | null,
+    email: null as string | null,
     isAuth: false
 }
 
+export type initialStateAuthType = typeof initialState
 
-
-const authReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action):initialStateAuthType => {
 
     switch (action.type) {
 
         case SET_USER_DATA:
-            // console.log(action.data)
             return {
                 ...state,
                 ...action.data,
             }
 
-            default:
-                return state;
+        default:
+            return state;
     }
-
 }
 
-export const setAuthUserData = (email, id, login, isAuth) => ({
+type authData = {
+    id: number|null
+    login: string|null
+    email: string|null
+    isAuth: boolean| null
+}
+
+type SET_USER_DATA = typeof SET_USER_DATA;
+
+type setAuthUserDataType ={
+    type: SET_USER_DATA
+    data: authData
+}
+
+
+export const setAuthUserData = (email: string|null, id: number|null, login: string|null, isAuth: boolean):setAuthUserDataType => ({
     type: SET_USER_DATA,
     data: {
         id,
@@ -39,35 +51,34 @@ export const setAuthUserData = (email, id, login, isAuth) => ({
         email,
         isAuth
     },
-
 })
 
+ 
+ 
 
 export const AuthUserDataThunkCreator = () => {
-    return (dispatch) => {
+    return (dispatch:any) => {
         return usersAPI.authMe()
             .then(data => {
-                
                 if (data.resultCode === 0) {
                     let {
                         email,
                         id,
                         login
                     } = data.data;
-                    
+
                     dispatch(setAuthUserData(email, id, login, true));
                 }
             });
-
     }
 }
 
 
 export const loginThunkCreator = (email, password, remember) => {
-    return (dispatch) => {
+    return (dispatch:any) => {
         AuthAPI.loginApi(email, password, remember)
             .then(data => {
-                if (data.data.resultCode === 0) {
+                if (data.data.resultCode === ResultCodeEnum.Success) {
                     dispatch(AuthUserDataThunkCreator())
                 }
             });
@@ -75,7 +86,7 @@ export const loginThunkCreator = (email, password, remember) => {
 }
 
 export const loginOutThunkCreator = () => {
-    return (dispatch) => {
+    return (dispatch:any) => {
         AuthAPI.logiout()
             .then(data => {
                 console.log()

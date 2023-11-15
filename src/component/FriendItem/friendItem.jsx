@@ -4,7 +4,7 @@ import cle from './friendItem.module.css';
     return(
         <div>
             <div className={cle.item}>
-                    <img src={props.img} />
+                    <img alt='friendImg' src={props.img} />
                     {props.name}
                 </div>
         </div>

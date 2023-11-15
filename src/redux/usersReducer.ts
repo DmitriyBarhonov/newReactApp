@@ -1,6 +1,4 @@
 import { AppStateType, inferActionTypes } from './reduxStore';
-import { boolean } from 'yup';
-import { photoType, } from "../types/types";
 // @ts-ignore
 import { usersAPI } from "../api/api.ts"
 import { userType } from "../types/types";

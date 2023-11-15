@@ -2,7 +2,7 @@
 import user from './user.module.css'
 // @ts-ignore
 import userPhoto from '../../img/user.png'
-import { NavLink, useSearchParams } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import React from 'react';
 // @ts-ignore
 import { FormSearch } from './usersFormSearch'
@@ -12,7 +12,6 @@ import { getUsersSuperSelector, getFilter, getPageSize, getUserCount, getCurntPa
 import { getUsersThunkCreator, followThunkCreator, unFollowThunkCreator } from "../../redux/usersReducer.ts"
 import { Navigate, useNavigate, } from "react-router-dom"
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom'
 
 
 export const Users = () => {
@@ -26,12 +25,11 @@ export const Users = () => {
   const history = useNavigate()
   // const params = useParams()
   // const g = useSearchParams()
-  const [searchParams] = useSearchParams();
 
 
   useEffect(() => {
     history(`?term=${filter.term}&friend=${filter.friend}&page=${curntPage}`)
-  }, [filter, curntPage])
+  }, [filter, curntPage, history])
 
 
 

@@ -1,4 +1,3 @@
-import { types } from "@babel/core";
 // @ts-ignore
 import { AuthUserDataThunkCreator } from "./authReducer.ts";
 const SET_INITIALIZED = 'SET_INITIALIZED';

@@ -1,5 +1,4 @@
 // @ts-ignore
-import post from './post.module.css'
 import React from 'react'
 
 type Props = {
@@ -13,7 +12,7 @@ export const Post: React.FC<Props> = (props) => {
     return (    
         <>
         <div>
-            <img src='https://img.gazeta.ru/files3/949/12549949/kitty-pic905-895x505-61908.jpg' />
+            <img alt='img' src='https://img.gazeta.ru/files3/949/12549949/kitty-pic905-895x505-61908.jpg' />
             <div >{props.text}</div>
         </div>
 

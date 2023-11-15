@@ -8,7 +8,7 @@ const DialogItem = (props) => {
         <div className={dialog.item}>
             <NavLink to={`/dialogs/${props.id}`} className={set => set.isActive ? dialog.active : dialog.item}>
                 <div className={dialog.dialogI}>
-                    <img src={props.img} />
+                    <img alt="dialogImg" src={props.img} />
                     {props.name}
                 </div>
             </NavLink>

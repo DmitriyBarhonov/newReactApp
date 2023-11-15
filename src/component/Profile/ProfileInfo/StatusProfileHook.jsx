@@ -14,7 +14,7 @@ let [status, setStatus] = useState(props.status)
 useEffect(()=>{
     console.log(`params`)
     setStatus(statusStore)
-},[])
+},[statusStore])
 
 
 const activateEditMode = ()=>{

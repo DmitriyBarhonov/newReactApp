@@ -38,7 +38,7 @@ const dispatch = useDispatch()
                         <div>
                             {captcha ?
                                 <div>
-                                    <img src={captcha} />
+                                    <img alt='img' src={captcha} />
                                     <div>
                                         <Field name="captcha" type="text" placeholder='captcha' />
                                     </div>

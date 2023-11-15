@@ -1,42 +1,38 @@
-import React, { useEffect } from 'react'
-import { Profile } from './profile';
+import React, { useEffect } from "react";
+import { Profile } from "./profile";
 // @ts-ignore
-import { getStatusThunkCreactor, setProdileThunkCreactor } from '../../redux/profileReducer.ts';
+import {
+  getStatusThunkCreactor,
+  setProdileThunkCreactor,
+} from "../../redux/profileReducer.ts";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useParams } from "react-router-dom"
+import { Navigate, useParams } from "react-router-dom";
 
+const ProfileContainer = () => {
+  const dispatch = useDispatch();
+  const params = useParams();
 
- const  ProfileContainer = ()=> {
-  const dispatch = useDispatch()
-  const params = useParams()
+  const auth = useSelector((state: any) => state.auth);
 
-  const auth = useSelector((state:any)=> state.auth)
-
-
- const refreshProfile = () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const refreshProfile = () => {
     let userId = params.userId;
     if (!userId) {
       userId = auth.id;
     }
-    dispatch(getStatusThunkCreactor(userId))
-    dispatch(setProdileThunkCreactor(userId))
-   
-  }
+    dispatch(getStatusThunkCreactor(userId));
+    dispatch(setProdileThunkCreactor(userId));
+  };
 
-
- useEffect(()=>{
-    refreshProfile()
-   },[])  
- 
-
+  useEffect(() => {
+    refreshProfile();
+  }, [refreshProfile]);
 
   if (!auth.isAuth) {
-    return <Navigate to = {"/login"} />
-}
- 
-    return <Profile 
-      isOvner={!params.userId}
-    />
+    return <Navigate to={"/login"} />;
   }
 
-  export default ProfileContainer
+  return <Profile isOvner={!params.userId} />;
+};
+
+export default ProfileContainer;

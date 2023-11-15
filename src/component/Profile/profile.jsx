@@ -1,8 +1,7 @@
-import { useSelector } from 'react-redux';
 import { MyPostsContainer } from './MyPosts/myPostsContainer';
 import clases from './profile.module.css';
 import { ProfileInfo } from './ProfileInfo/ProfileInfo';
-import { Navigate } from "react-router-dom"
+
 
 export const Profile = (props) => {
   

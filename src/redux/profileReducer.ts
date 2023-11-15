@@ -15,7 +15,7 @@ const SET_INFO_PROFILE = "SET_INFO_PROFILE"
 
 let initialState = {
     postData: [{
-        massage: "Я сегоня пил молоко",
+        massage: "Я сегодня пил молоко",
         id: 1
     },
     {
@@ -183,7 +183,7 @@ export const updateStatusThunkCreactor = (status: string):ThunkActionType => {
     }
 }
 
-export const onSumbitInfo = (data: object) => {
+export const onSumbitInfo = (data: any) => {
     return (dispacth: DispathType) => {
         profileAPI.getSumbitInfo(data)
             .then(r => {

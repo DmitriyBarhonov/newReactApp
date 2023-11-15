@@ -105,8 +105,8 @@ export const Users = () => {
             </div>
 
             <div className={user.location}>
-              <div>{'u.location.contry'}</div>
-              <div>{'u.location.city'}</div>
+              <div>{u.location || "contry"}</div>
+              <div>{u.location  || "city"}</div>
             </div>
 
           </div>

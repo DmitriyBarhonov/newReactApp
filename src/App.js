@@ -24,9 +24,8 @@ export const App = ()=> {
   const initialize = useSelector((state)=>state.app.initialized)
   const dispatch = useDispatch()
   useEffect(()=>{
-    console.log(`хуй`)
     dispatch(initializeThunkCreator())
-  },[])
+  },[dispatch])
  
 
 if(!initialize){
@@ -56,10 +55,3 @@ if(!initialize){
       )
 
   }
-
-
-// const mapStateToProps = (state)=>({
-//   initialize: state.app.initialized
-// })
-
-// export default connect(mapStateToProps, {initializeThunkCreator})(App)

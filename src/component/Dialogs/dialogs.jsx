@@ -11,7 +11,7 @@ const DialogForm = (props) => {
                 <Form>
                     <div className={dialog}>
                         <div>
-                            <Field name="newTextMassage" type="text" placeholder='Напиши что жизнь говно'/>
+                            <Field name="newTextMassage" type="text" placeholder='Напиши'/>
                         </div>
                         <div>
                             <button type="sumbit" >Отправить</button>

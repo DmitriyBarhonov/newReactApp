@@ -136,7 +136,6 @@ const usersReducer = (state = initialState, action: ActionsType): initialStateUs
 
 
 type dispatchType = Dispatch<ActionsType>
-type GetStateType = AppStateType
 type ThunkType = ThunkAction<void, AppStateType, unknown, ActionsType>
 
 export const getUsersThunkCreator = (curntPage: number, pageSize: number, filter: any): ThunkType => {

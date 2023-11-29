@@ -18,19 +18,11 @@ let initialState = {
         massage: "Как дела",
         id: 1
     },
-    {
-        massage: "Как семья",
-        id: 2
-    },
-    {
-        massage: "Как маашина",
-        id: 3
-    },
 ] as Array<massageType>,
     userData: [{
         name: "Димон",
         id: 1,
-        img: 'https://cdnn1.img.sputniknews-uz.com/img/07e6/01/19/22379869_213:0:1920:1280_1920x0_80_0_0_92536f3b9e90c51a3657bb5935a3d89e.jpg'
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzKyB45QLywXG4tme7cCd8If3JBq5I4sAHUAWKPAzx&s'
     },
     {
         name: "Андрей",

@@ -1,5 +1,3 @@
-// import  DialogsContainer  from './component/Dialogs/dialogsContainer';
-// import  ProfileContainer  from './component/Profile/profileContainer';
 import {Routes, Route} from "react-router-dom";
 import { Header } from './component/Header/header';
 import { Navbar } from './component/Navbar/navbar';

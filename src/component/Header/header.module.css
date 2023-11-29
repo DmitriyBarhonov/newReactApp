@@ -1,7 +1,8 @@
 .header {
     grid-area: h;
-    background: url('https://ichef.bbci.co.uk/news/624/amz/worldservice/live/assets/images/2015/04/23/150423154842_spacedust.jpg') center center no-repeat;
-    background-size: cover;
+    /* background: url('https://ichef.bbci.co.uk/news/624/amz/worldservice/live/assets/images/2015/04/23/150423154842_spacedust.jpg') center center no-repeat; */
+    background: rgb(184,80,255);
+    background: linear-gradient(90deg, rgba(184,80,255,0) 25%, rgba(0,0,238,1) 50%, rgba(29,45,253,0) 100%);
     display: flex;
     align-items: center;
   }
@@ -13,7 +14,8 @@
   }
 
   .login{
-    background: rgb(0, 0, 0);
+    background: rgb(184,80,255);
+background: linear-gradient(90deg, rgba(184,80,255,0.8211659663865546) 29%, rgba(29,45,253,0.7203256302521008) 50%);
     padding: 3px 5px;
     border-radius: 5px;
   }

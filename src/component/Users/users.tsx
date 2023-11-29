@@ -53,7 +53,7 @@ export const Users = () => {
   let pages: Array<number> = []
   const pageCount = Math.ceil(totalUsersCount / pageSize);
   for (let i = 1; i < pageCount; i++) {
-    if (pages.length < 10) {
+    if (pages.length < 15) {
       pages.push(i);
     }
   }
@@ -104,7 +104,7 @@ export const Users = () => {
 
             <div className={user.location}>
               <div>{u.location || "contry"}</div>
-              <div>{u.location  || "city"}</div>
+              <div>{u.location  || "Town"}</div>
             </div>
 
           </div>

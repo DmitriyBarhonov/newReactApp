@@ -3,6 +3,7 @@ import React from 'react';
 import DialogItem from './DialogItem/dialogItem';
 import Massage from './Massage/massage';
 import { Formik, Form, Field, } from "formik";
+import { Button } from 'antd';
 
 const DialogForm = (props) => {
     return (
@@ -14,7 +15,7 @@ const DialogForm = (props) => {
                             <Field name="newTextMassage" type="text" placeholder='Напиши'/>
                         </div>
                         <div>
-                            <button type="sumbit" >Отправить</button>
+                            <Button type="primary">Отправить</Button>
                         </div>
                     </div>
                 </Form>

@@ -1,11 +1,8 @@
-// @ts-ignore
 import { Users } from "./users.tsx";
 import { Loader } from "../common/preloader/loader";
 import { getFetching } from "../../redux/usersSelectors";
 import { useSelector, useDispatch } from "react-redux";
-// @ts-ignore
 import React, { useEffect } from "react";
-// @ts-ignore
 import { getUsersThunkCreator } from "../../redux/usersReducer.ts";
 import {
   getFilter,
@@ -44,6 +41,6 @@ export const UserPage = () => {
         break;
     }
     dispatch(getUsersThunkCreator(actualPage, pageSize, actualFilter));
-  }, [curntPage, dispatch, filter, pageSize, searchParams]);
+  }, []);
   return <>{isFetching ? <Loader /> : <Users />}</>;
 };

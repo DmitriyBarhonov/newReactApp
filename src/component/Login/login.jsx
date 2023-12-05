@@ -3,7 +3,7 @@ import { Formik, Form, Field } from "formik";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { loginThunkCreator } from "../../redux/authReducer.ts";
 import { Navigate } from "react-router-dom";
-import { Button } from "antd";
+import s from "./login.module.css";
 
 const Login = () => {
   const isAuth = useSelector((state) => state.auth.isAuth);
@@ -16,7 +16,6 @@ const Login = () => {
 
   return (
     <div>
-      <div>Login</div>
       <Formik
         initialValues={{
           email: "",
@@ -31,13 +30,13 @@ const Login = () => {
       >
         <Form>
           <div>
-            <div>
+            <div className={s.inputLogin}>
               <Field name="email" type="email" placeholder="Логин" />
             </div>
-            <div>
+            <div className={s.inputLogin}>
               <Field name="password" type="password" placeholder="Пароль" />
             </div>
-            <div>
+            <div className={s.checkboxLogin}>
               <Field name="remember" type="checkbox" />
               <label>Remember me</label>
             </div>
@@ -52,7 +51,7 @@ const Login = () => {
               ) : null}
             </div>
             <div>
-              <button type="sumbit">Login</button>
+              <button className={s.buttonLogin} type="sumbit">Login</button>
             </div>
           </div>
         </Form>

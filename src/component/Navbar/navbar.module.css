@@ -1,16 +1,15 @@
 .nav {
     grid-area: n;
-    background: url('https://ichef.bbci.co.uk/news/624/amz/worldservice/live/assets/images/2015/04/23/150423154842_crab.jpg') center center no-repeat;
-    background-size: cover;
   }
 
 
   .item {
     color: #FFFF;
     text-decoration: none;
+    margin-bottom: 10px;
   }
   .active{
-    color: rgb(111, 17, 17);
+    color: rgb(39, 165, 255);
     text-decoration: none;
   }
 

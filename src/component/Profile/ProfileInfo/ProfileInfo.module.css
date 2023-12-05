@@ -1,13 +1,44 @@
-.photo{
-    display: inline-block;
-    width: 50%;
- }
-
- .beach {
-    width: 70%;
-    padding: 0 1rem;
-  }
-
-  .main_photo{
+.photo {
+   display: inline-block;
    width: 50%;
-  }
+}
+
+.beach {
+   width: 70%;
+   padding: 0 1rem;
+}
+
+.main_photo {
+   width: 50%;
+}
+
+.button {
+   border: none;
+   border-radius: 6px;
+   cursor: pointer;
+   background-color: #1677ff;
+   color: #fff;
+   box-shadow: 0 2px 0 rgba(5, 145, 255, 0.1);
+   padding: 4px 15px;
+   ;
+   margin: 10px 0;
+   height: 32px;
+}
+
+.form input {
+   width: 250px;
+   padding: 5px 10px;
+   border-radius: 8px;
+   border: none;
+   height: 20px;
+   margin-bottom: 10px;
+}
+
+.checkbox {
+   margin-bottom: 10px;
+}
+
+.profileContact,
+.description div {
+   margin-top: 10px;
+}

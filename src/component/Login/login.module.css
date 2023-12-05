@@ -1,0 +1,20 @@
+.inputLogin input{
+    width: 250px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.checkboxLogin input{
+     margin: 0;
+}
+
+.buttonLogin{
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-top: 5px;
+    cursor: pointer;
+}

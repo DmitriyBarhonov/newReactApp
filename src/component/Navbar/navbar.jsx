@@ -59,11 +59,6 @@ export const Navbar = (props) => {
           Users
         </NavLink>
       </div>
-
-      <div className={nav.fri}>
-        <div>Друзья</div>
-        {/* {nameFriend} */}
-      </div>
     </nav>
   );
 };

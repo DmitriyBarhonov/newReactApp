@@ -1,7 +1,6 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 4fr;
-    background: url('https://ichef.bbci.co.uk/news/624/amz/worldservice/live/assets/images/2015/04/23/150423155652_spaceformation.jpg') center center no-repeat;
     background-size: cover;
     font-size: 2rem;
 }
@@ -46,3 +45,11 @@
 textarea{
     resize: none;
 }
+
+.form input{
+    width: 250px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: none;
+    height: 20px;
+ }

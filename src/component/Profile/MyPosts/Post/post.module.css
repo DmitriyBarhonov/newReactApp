@@ -16,5 +16,7 @@ span{
 }
 
 .postPhoto{
-    width: 40%;
+    width: 20%;
+    border-radius: 20%;
 }
+

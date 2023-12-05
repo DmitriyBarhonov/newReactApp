@@ -1,3 +1,8 @@
+input:focus {
+  outline: none;
+  border: none;
+}
+
 .app_wrapper {
   display: grid;
   grid-template-areas:
@@ -18,4 +23,6 @@
 
 body {
   color: #FFF;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
 }

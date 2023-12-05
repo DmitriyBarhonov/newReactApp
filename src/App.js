@@ -5,7 +5,7 @@ import { News } from './component/News/news';
 import { Music } from './component/Music/music';
 import { Settings } from './component/Settings/settings';
 import { UserPage } from './component/Users/usersContainer.tsx';
-import { LoginContainer } from './component/Login/lofin';
+import { LoginContainer } from './component/Login/login';
 import React, {lazy, useEffect} from "react";
 import {useDispatch, useSelector } from "react-redux/es/exports";
 import{initializeThunkCreator} from "./redux/appReducer.ts"

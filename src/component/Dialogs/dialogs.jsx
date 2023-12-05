@@ -1,4 +1,4 @@
-import dialog from './dialogs.module.css';
+import s from './dialogs.module.css';
 import React from 'react';
 import DialogItem from './DialogItem/dialogItem';
 import Massage from './Massage/massage';
@@ -10,12 +10,12 @@ const DialogForm = (props) => {
         <>
             <Formik  initialValues={{ newTextMassage: "" }} onSubmit={(values)=>{props.onSendClickMassage(values.newTextMassage)}}>
                 <Form>
-                    <div className={dialog}>
-                        <div>
-                            <Field name="newTextMassage" type="text" placeholder='Напиши'/>
+                    <div className={s}>
+                        <div className={s.form}>
+                            <Field name="newTextMassage" type="text" placeholder='Your text'/>
                         </div>
                         <div>
-                            <Button type="primary">Отправить</Button>
+                            <Button type="primary">Send</Button>
                         </div>
                     </div>
                 </Form>
@@ -36,12 +36,12 @@ export const Dialogs = (props) => {
 
     return (
 
-        <div className={dialog.dialogs}>
-            <div className={dialog.dialogs_item}>
+        <div className={s.dialogs}>
+            <div className={s.dialogs_item}>
                 {DialogsName}
             </div>
 
-            <div className={dialog.massage}>
+            <div className={s.massage}>
                 {MassageText}
             </div>
             <DialogForm onSendClickMassage={onSendClickMassage}/>
